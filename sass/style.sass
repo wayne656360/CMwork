@@ -1,0 +1,582 @@
+@import reset
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&amp;family=Roboto:wght@100..900&amp;display=swap')
+html,body
+  background: linear-gradient(90deg, #f09f12 0%,#FDC159 25%, #FF8246 75%,#f05006 100%)
+  animation: BackgroundGradient 5s ease infinite alternate
+  background-size: 400% 400%
+  padding: 0
+  margin: 0
+  width: 100%
+body
+  font-family: 'Noto Sans TC', "PingFang SC", sans-serif 
+  font-weight: 500
+  letter-spacing: 1px
+  color: #333
+.progress
+  position: fixed
+  width: 100%
+  height: 100%
+  overflow: hidden
+  background: linear-gradient(45deg, #f09f12 0%,#FDC159 25%, #FF8246 75%,#f05006 100%)
+  z-index: 9999
+  display: flex
+  justify-content: center
+  align-items: center
+  &.dispear
+    opacity: 0
+    pointer-events: none
+header
+  position: fixed
+  width: 100%
+  top: 0
+  z-index: 1000
+  padding: 50px 7% 0 45px
+  display: flex
+  justify-content: space-between
+  .hambuger
+    cursor: pointer
+    opacity: 1
+    transition: .3s ease
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5))
+    &.active
+      opacity: 0
+      pointer-events: none
+      transition: .5s ease
+  .menu
+    position: fixed
+    width: 100%
+    height: 100vh
+    background: rgba(255,255,255,.8)
+    display: flex
+    justify-content: center
+    align-items: center
+    left: 0
+    top: 0
+    opacity: 0
+    pointer-events: none
+    transition: .3s ease
+    &.active
+      opacity: 1
+      pointer-events: all
+      transition: .5s ease
+      ul
+        transform: scale(1)
+    ul
+      transform: scale(1.1)
+      transition: .3s ease
+      text-align: center
+      width: fit-content
+      min-width: 240px
+      font-size: 24px
+      font-weight: 400
+      color: #4c4c4c
+      li
+        padding: 24px 0
+        border-bottom: 1px white solid
+        cursor: pointer
+    .close
+      position: absolute
+      top: calc(50px + 5px)
+      right: calc(7% + 5px)
+main
+  width: 100%
+  height: auto
+  margin: 0 auto
+  position: relative
+  overflow: hidden
+  .bgVideo
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    clip-path: ellipse(90% 100% at 50% 0%)
+    overflow: hidden
+    z-index: 2
+    object-fit: cover
+    video 
+      min-width: 100%
+      min-height: 100%
+  .kv
+    position: relative
+    width: 100%
+    height: 100vh
+    &.active
+      .mosue
+        opacity: 1
+        transform: translateX(-50%) translateY(0px)
+        transition: all 1s 2.5s ease-out
+      .kv_txt
+        .kv_t1
+          opacity: 1
+          transform: scale(1)
+          transition: all .5s ease 
+        .kv_t2
+          .kv_t2-1
+            transform: scaleY(1)
+            transition: all .5s .3s ease
+          .kv_t2-2
+            transform: translateY(0px)
+            opacity: 1
+            transition: all .75s .6s ease
+          .kv_t2-3
+            transform: translateY(0px)
+            opacity: 1
+            transition: all .75s .9s ease
+      .kv_txt2
+        .kv_t3-1
+          transform: translateX(0px)
+          opacity: 1
+          transition: all 1s 1.2s ease-out
+        .kv_t3-2
+          transform: translateX(0px)
+          opacity: 1
+          transition: all 1s 1.8s ease-out
+        .kv_t3-3
+          transform: translateX(0px)
+          opacity: 1
+          transition: all 1s 1.5s ease-out
+    .kv_txt
+      filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5))
+      position: absolute
+      top: 45%
+      left: 50%
+      transform: translate(-50%,-50%)
+      z-index: 10
+      max-width: 663px
+      .kv_t1
+        opacity: 0
+        transform: scale(.5)
+      .kv_t2
+        display: flex
+        .kv_t2-1
+          width: 76%
+          margin: 6.5% auto 0
+          transform: scaleY(0)
+          transform-origin: bottom center
+        .kv_t2-2
+          position: absolute
+          width: 48%
+          top: 44%
+          left: 26%
+          transform: translateY(-10px)
+          opacity: 0
+        .kv_t2-3
+          position: absolute
+          width: 30.5%
+          top: 71.5%
+          left: 34.5%
+          transform: translateY(10px)
+          opacity: 0
+    .kv_txt2
+      position: absolute
+      bottom: 15%
+      right: 5%
+      z-index: 10
+      max-width: 436px
+      display: flex
+      flex-wrap: wrap
+      width: 25vw
+      .kv_t3-1
+        width: 53%
+        margin-right: 47%
+        transform: translateX(50px)
+        opacity: 0
+      .kv_t3-2
+        margin-top: 5%
+        width: 39%
+        transform: translateX(-50px)
+        opacity: 0
+      .kv_t3-3
+        margin-top: 4.5%
+        margin-left: 2%
+        width: 59%
+        transform: translateX(50px)
+        opacity: 0
+    .mosue
+      position: absolute
+      width: 42px
+      height: 66px
+      background: url('../images/mouse.svg') no-repeat
+      background-size: contain
+      left: 50%
+      transform: translateX(-50%) translateY(-50px)
+      bottom: 26px
+      display: block
+      z-index: 11
+      opacity: 0
+      div
+        position: absolute
+        width: 2px
+        height: 10px
+        border-radius: 1px
+        display: block
+        background: white
+        left: 50%
+        margin-left: -1px
+        top: 35px
+        animation: scroll 1s ease infinite
+  .foreword
+    position: relative
+    width: 100%
+    height: auto
+    overflow: hidden
+    .foreword_bg
+      width: 90%
+      height: 100%
+      background: url('../images/Group38.svg') repeat-y 
+      background-size: cover
+      left: 5%
+      top: 0
+      position: fixed
+      z-index: 0
+    .photo_right
+      position: fixed
+      width: 100%
+      z-index: 1
+      top: 40%
+      left: 55%
+      transform: scale(.8)
+      .spiral-carousel
+        position: relative
+        transform-style: preserve-3d
+        .spiral-item
+          position: absolute
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2)
+          animation: spiralFlow var(--spiral-anim-speed, 120s) linear infinite
+          will-change: transform
+          width: 250px
+          img
+            display: block
+    .photo_left
+      width: 45%
+      padding-top: 50vh
+      padding-left: 7.5%
+      padding-right: 2em
+      padding-bottom: 30px
+      color: white
+      letter-spacing: 10%
+      h2
+        font-size: 45px
+        font-weight: bold
+        line-height: 1.4
+        margin-bottom: 30px
+        letter-spacing: 5%
+        opacity: 0
+        transform: translateX(-100px)
+        transition: all .5s ease-out
+        &.is-show
+          opacity: 1
+          transform: translateX(0px)
+          transition: all .75s ease-out
+      p
+        font-size: 18px
+        line-height: 1.7
+        margin-bottom: 30px
+        opacity: 0
+        transform: translateX(-100px)
+        transition: all .5s ease-out
+        &.is-show
+          opacity: 1
+          transform: translateX(0px)
+          transition: all .75s ease-out
+  .keyman
+    position: relative
+    background: #f5f5f5
+    padding: 130px 0
+    width: 100%
+    height: auto
+    overflow: hidden
+    z-index: 5
+    h2
+      color: #383838
+      font-size: 45px
+      letter-spacing: 5%
+      line-height: 1.7
+      font-weight: bold
+      padding-left: 7.5%
+      position: absolute
+      top: 130px
+      left: 0
+      span
+        display: block
+        font-weight: 500
+        font-size: 17px
+        line-height: 1.4
+        color: #e04e07
+        letter-spacing: 10%
+    .keyman_silder
+      width: 100%
+      overflow: visible
+      margin: auto
+      .swiper-wrapper
+        width: 100%
+        height: auto
+        left: -125px
+        display: flex
+        align-items: center
+        .swiper-slide
+          padding: 0 15px
+          &.swiper-slide-active
+            min-width: 530px
+            &.is-active-slide
+              .keymen_photo
+                transform: scale(1)
+                opacity: 1
+                transition: all .5s ease
+              .keymen_txt
+                top: 0
+                opacity: 1
+                transition: all .5s ease
+            .keymen_photo
+              aspect-ratio: 1
+              margin-bottom: 30px
+              position: relative
+              overflow: visible
+              transform: scale(.75)
+              opacity: 0
+              &::before,&::after
+                width: 65px
+                height: 65px
+                content: ""
+                top: -3px
+                right: -3px
+                border-style: solid
+                position: absolute
+                border-width: 6px 6px 0 0
+                border-color: #E04E07
+                z-index: 2
+                display: block
+              &::after
+                top: initial
+                right: initial
+                left: -3px
+                bottom: -3px
+                border-width: 0 0 6px 6px
+              img
+                filter: grayscale(0%)
+                z-index: 1
+                position: relative
+            .keymen_txt
+              height: auto
+              top: -50px
+              opacity: 0
+              transition: all .3s ease
+              transform-origin: top center
+          .keymen_photo
+            aspect-ratio: 230 / 330
+            transform: scale(1)
+            overflow: hidden
+            img
+              width: 100%
+              height: 100%
+              object-fit: cover
+              object-position: center top
+              filter: grayscale(100%)
+              pointer-events: none
+              display: block
+          .keymen_txt
+            position: relative
+            height: 0
+            display: block
+            overflow: hidden
+            h3
+              font-size: 26px
+              font-weight: 400
+              color: black
+              line-height: 1.4
+              margin-bottom: 30px
+              span
+                font-weight: 500
+                display: inline-block 
+                padding-right: .5em
+                margin-right: .5em
+                border-right: black 1px solid
+            p
+              font-size: 18px
+              color: black
+              line-height: 1.7
+              letter-spacing: 5%
+              font-weight: 400
+              &::before
+                content: ""
+                width: 40px
+                height: 3px
+                background: #E04E07
+                display: block
+                margin-bottom: 15px
+    .swiper_btn
+      width: 100px
+      display: flex
+      justify-content: space-between
+      position: absolute
+      top: 275px
+      right: 40px
+      z-index: 100
+      .swiper-btn-next,.swiper-btn-prev
+        cursor: pointer
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        overflow: hidden
+        background: none
+        transition: all .3 ease
+        svg
+          path
+            stroke:#383838
+          rect
+            stroke:#383838
+        &:hover
+          background: #E04E07
+          transition: all .3 ease
+          svg
+            path
+              stroke: white
+            rect
+              stroke: white
+  .marquee
+    position: relative
+    width: 100%
+    background: #f5f5f5
+    overflow: hidden
+    display: flex
+    z-index: 5
+    h1
+      font-size: 126px
+      line-height: 1
+      color: #E14C02
+      white-space: nowrap
+      text-transform: uppercase
+      vertical-align: bottom
+      position: relative
+      top: 9px
+footer
+  width: 100%
+  background: #E14C02
+  padding: 20px 
+  position: relative
+  z-index: 5
+  p
+    color: #f5f5f5
+    font-size: 13px
+    line-height: 1.4
+    letter-spacing: 0
+    text-align: center
+
+@keyframes BackgroundGradient 
+  0%
+    background-position: 0% 50%
+  50%
+    background-position: 50% 50%
+  100%
+    background-position: 0% 50%
+@keyframes spiralFlow 
+  0% 
+    transform: rotateY(var(--angle)) translateZ(var(--radius)) translateY(var(--start-y)) rotateX(-5deg) rotateZ(3deg)
+    opacity: 0
+  5% 
+    opacity: 1
+  95%
+    opacity: 1
+  100% 
+    transform: rotateY(calc(var(--angle) + 360deg)) translateZ(var(--radius)) translateY(var(--end-y)) rotateX(5deg) rotateZ(3deg)
+    opacity: 0
+@keyframes scroll
+  0% 
+      transform: translateY(0px)
+      opacity: 0
+  10% 
+      transform: translateY(0px)
+      opacity: 1
+  90% 
+      transform: translateY(5px)
+      opacity: 1
+  100% 
+      transform: translateY(5px)
+      opacity: 0
+@media screen and (max-width: 1025px)
+  main 
+    .foreword 
+      height: auto
+      padding-top: 30vh
+      .foreword_bg 
+        background-size: contain
+      .photo_right
+        top: 60%
+        left: 35%
+        transform: scale(.9)
+      .photo_left
+        position: relative
+        width: 100%
+        z-index: 100
+        background: linear-gradient(180deg, rgba(240, 159, 18, 0),rgba(255, 155, 68, 1),rgba(240, 80, 6, 1));
+        padding-top: 80vh
+        padding-left: 7.5%
+        padding-right: 7.5%
+    .keyman
+      h2
+        position: relative
+        top: 0
+        margin-bottom: 40px
+      .keyman_silder
+        .swiper-wrapper
+          left: -15%
+          align-items: flex-start
+          .swiper-slide.swiper-slide-active
+            min-width: 50%
+      .swiper_btn
+        width: 100%
+        left: 0
+        top: 32.5%
+        padding: 0 25%
+        .swiper-btn-next,.swiper-btn-prev
+          background: #000
+          svg
+            rect
+              stroke: none
+            path
+              stroke: white
+@media screen and (max-width: 640px)
+  header
+    padding: 20px
+    img
+      &:first-child
+        height: 30px
+        margin: 10px 0
+  main
+    .bgVideo
+      clip-path: ellipse(150% 100% at 50% 0%)
+    .kv 
+      .kv_txt
+        width: 80%
+        top: 40%
+      .kv_txt2
+        bottom: 22.5%
+        right: 15%
+        width: 70%
+    .foreword 
+      padding-top: 0
+      .photo_right
+          top: 50%
+          left: 12.5%
+          transform: scale(.5) translateY(-50%)
+      .photo_left
+        h2
+          font-size: 8vw
+    .keyman 
+      .keyman_silder 
+        .swiper-wrapper 
+          left: 0
+          .swiper-slide.swiper-slide-active
+            min-width: initial
+          .swiper-slide 
+            .keymen_photo
+              aspect-ratio: 1
+      .swiper_btn
+        top: 33%
+        padding: 0 10%
+      h2
+        padding-left: 12.5%
+  .progress img
+    width: 50vw
+
